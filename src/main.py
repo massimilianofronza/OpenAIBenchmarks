@@ -3,13 +3,16 @@ import multiprocessing
 import neat
 import os
 
+import my_genome
+
 # Constant variables
 CONFIG_PATH = "./config_ffnn_cartpole"
-NUM_GENERATIONS = 50
+NUM_GENERATIONS = 5
 
 # Classic control
 env = gym.make('CartPole-v1')
 
+CartGenome = my_genome.CartGenome
 
 if __name__ == '__main__':
     
@@ -29,7 +32,7 @@ if __name__ == '__main__':
     pop.add_reporter(stats)
 
     # Use the parallel module of neat to let the evaluations be computed together
-    pe = neat.ParallelEvaluator(multiprocessing.cpu_count(), eval_genome)
+    pe = neat.ParallelEvaluator(multiprocessing.cpu_count(), CartGenome.eval_genome)
 
     # run NEAT for num_generations
     winner = pop.run(pe.evaluate, NUM_GENERATIONS)
