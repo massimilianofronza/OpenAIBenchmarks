@@ -1,4 +1,3 @@
-import gym
 import multiprocessing
 import neat
 import os
@@ -7,10 +6,8 @@ import my_genome
 
 # Constant variables
 CONFIG_PATH = "./config_ffnn_cartpole"
-NUM_GENERATIONS = 5
+NUM_GENERATIONS = 200
 
-# Classic control
-env = gym.make('CartPole-v1')
 
 CartGenome = my_genome.CartGenome
 
