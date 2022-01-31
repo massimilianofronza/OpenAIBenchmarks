@@ -1,6 +1,7 @@
 import multiprocessing
 import neat
 import os
+import pickle
 
 import my_genome
 
@@ -33,6 +34,17 @@ if __name__ == '__main__':
 
     # run NEAT for num_generations
     winner = pop.run(pe.evaluate, NUM_GENERATIONS)
+
+    # Save the winner
+    try:
+        # Open for writing the best individual in binary mode
+        with open('./results/winner.pickle', 'xb') as file:
+            pickle.dump(winner, file)
+    except FileExistsError:
+        print("An optimal individual was already found and recorded!")
+    except:
+        print("Something else happened.")
+
 
     # Display the winning genome
     print('\nBest genome:\n{!s}'.format(winner))

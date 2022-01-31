@@ -14,8 +14,8 @@ if __name__ == '__main__':
 
     with open('./results/winner.pickle', 'rb') as file:
         winner = pickle.load(file)
-        print("Winner: ", winner, "\n")
-    
+        print("\nWinner: ", winner, "\n")
+
     # Load the config file
     local_dir = os.path.dirname(__file__)
     config_file = os.path.join(local_dir, main.CONFIG_PATH)
