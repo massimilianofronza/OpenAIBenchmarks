@@ -7,7 +7,7 @@ import my_genome
 
 # Constant variables
 CONFIG_PATH = "./config_ffnn_cartpole"
-NUM_GENERATIONS = 100
+NUM_GENERATIONS = 20
 
 
 CartGenome = my_genome.CartGenome

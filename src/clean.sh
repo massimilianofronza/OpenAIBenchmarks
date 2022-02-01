@@ -2,4 +2,5 @@
 
 rm -r __pycache__
 rm *.svg
-rm results/*
+rm results/openaigym*
+rm results/winner.pickle

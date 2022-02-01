@@ -3,10 +3,6 @@ import neat
 import numpy as np
 
 
-# Classic control
-env = gym.make('CartPole-v1')
-
-
 ### Custom genome class for the CartPole problem
 class CartGenome(neat.DefaultGenome):
 
@@ -21,8 +17,13 @@ class CartGenome(neat.DefaultGenome):
         return self.fitness
 
     def simulate(self, network, isRendered):
+        env = gym.make('CartPole-v1')
         score = 0
         step = 0
+        
+        if isRendered:
+            env = gym.wrappers.Monitor(env, './results', force=True)
+
         observation = env.reset()
 
         while True:

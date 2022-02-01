@@ -8,6 +8,9 @@ import my_genome
 
 CartGenome = my_genome.CartGenome
 
+# Verification script, takes the winner of the previous main.py
+# execution and shows it in action. It also records an .mp4 video
+# in the "./results" folder
 if __name__ == '__main__':
     
     winner = None
@@ -23,7 +26,7 @@ if __name__ == '__main__':
                          neat.DefaultSpeciesSet, neat.DefaultStagnation,
                          config_file)
     
-    # Simulate the 
+    # Simulate the winner genome
     network = neat.nn.FeedForwardNetwork.create(genome=winner, config=config)
     score = winner.simulate(network, isRendered=True)
     
