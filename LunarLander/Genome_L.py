@@ -3,8 +3,8 @@ import neat
 import numpy as np
 
 
-### Custom genome class for the CartPole problem
-class CartGenome(neat.DefaultGenome):
+### Custom genome class for the LunarLander problem
+class LanderGenome(neat.DefaultGenome):
 
     # Initializes the first {pop_size} individuals
     def __init__(self, key):
@@ -17,12 +17,12 @@ class CartGenome(neat.DefaultGenome):
         return self.fitness
 
     def simulate(self, network, isRendered):
-        env = gym.make('CartPole-v1')
+        env = gym.make('LunarLander-v2')
         score = 0
         step = 0
         
         if isRendered:
-            env = gym.wrappers.Monitor(env, './results', force=True)
+            env = gym.wrappers.Monitor(env, './LunarLander/results', force=True)
 
         observation = env.reset()
 
