@@ -10,11 +10,11 @@ from LunarLander import Genome_L
 
 # Program parameters
 ENVIRONMENTS = ["CartPole", "LunarLander"]
-CONFIG_PATHS = ["./CartPole/config_ffnn_cartpole", "./LunarLander/config_ffnn_lander"]
+CONFIG_PATHS = ["./CartPole/config_ffnn_cartpole", "./LunarLander/config_ffnn_lunarlander"]
 RESULTS_FOLDER = ["./CartPole/results/", "./LunarLander/results/"]
-ENV_ID = 0      # Change index to switch between the environments
+ENV_ID = 1      # Change index to switch between the environments
 
-NUM_GENERATIONS = 50
+NUM_GENERATIONS = 200
 
 CustomGenome = None
 Results = RESULTS_FOLDER[ENV_ID]

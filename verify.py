@@ -1,5 +1,4 @@
 import os
-import gym
 import neat
 import pickle
 
@@ -8,9 +7,20 @@ from LunarLander import Genome_L
 
 
 ENVIRONMENTS = ["CartPole", "LunarLander"]
-CONFIG_PATHS = ["./CartPole/config_ffnn_cartpole", "./LunarLander/config_ffnn_lander"]
-RESULTS_FOLDER = ["./CartPole/results/", "./LunarLander/results/"]
-ENV_ID = 0      # Change index to switch between the environments
+CONFIG_PATHS = [
+    "./CartPole/config_ffnn_cartpole", 
+    "./LunarLander/config_ffnn_lunarlander",
+    "./LunarLander/singleGenomes/min_fitness/config_ffnn_lunarlander",
+    "./LunarLander/singleGenomes/nice/config_ffnn_lunarlander"
+]
+RESULTS_FOLDER = [
+    "./CartPole/results/", 
+    "./LunarLander/results/",
+    "./LunarLander/singleGenomes/min_fitness/",
+    "./LunarLander/singleGenomes/nice/"
+]
+
+ENV_ID = 3      # Change index to switch between the environments
 
 
 CustomGenome = None
@@ -27,7 +37,7 @@ if __name__ == '__main__':
     if ENV_ID == 0:
         CustomGenome = Genome_C.CartGenome
         print("\n########## CartPole benchmark ##########\n")
-    elif ENV_ID == 1:
+    elif 1 <= ENV_ID <= 3:
         CustomGenome = Genome_L.LanderGenome
         print("\n########## LunarLander benchmark ##########\n")
     else:

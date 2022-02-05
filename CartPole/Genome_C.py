@@ -35,7 +35,7 @@ class CartGenome(neat.DefaultGenome):
             action = np.argmax(output)
             observation, reward, done, info = env.step(action)
             score += reward
-
+# could optimize by making the cartpole stay inside a restrict boundary
             if done:
                 if isRendered:
                     print("Simulation ended with:\n\tScore: ", score, 

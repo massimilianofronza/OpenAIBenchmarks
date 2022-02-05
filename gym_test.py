@@ -15,7 +15,7 @@ env = gym.make('LunarLander-v2')
 #env = gym.make('BipedalWalkerHardcore-v3')
 #env = gym.make('CarRacing-v0')
 
-config_files = ['./config_ffnn_cartpole']
+score = 0
 
 for episode in range(5):
     observation = env.reset()
@@ -28,12 +28,15 @@ for episode in range(5):
         #print("Obs[2, 3, 4, 5, 6, 7]:\t", observation[2], "\t", observation[3], "\t", observation[4],
 #             "\t", observation[5], "\t\t", observation[6], " - ", observation[7])
         
-        action = env.action_space.sample() # or given a custom model, action = policy(observation)
+        action = 0#env.action_space.sample() # or given a custom model, action = policy(observation)
         observation, reward, done, info = env.step(action)
+        print("reward: ", reward)
+        exit(1)
 
         if done:
             print("\nEpisode finished after {} timesteps".format(t+1))
-            print("Final reward:", reward)
+            print("Simulation ended with:\n\tScore: ", score, 
+                    "\n\tLast reward: ", reward)
             break
     
     print("end of episode.\n")
