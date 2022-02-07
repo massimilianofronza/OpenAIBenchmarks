@@ -1,5 +1,5 @@
-import os
 import neat
+import os
 import pickle
 
 from CartPole import Genome_C
@@ -20,7 +20,7 @@ RESULTS_FOLDER = [
     "./LunarLander/singleGenomes/nice/"
 ]
 
-ENV_ID = 3      # Change index to switch between the environments
+ENV_ID = 1      # Change index to switch between the environments
 
 
 CustomGenome = None
