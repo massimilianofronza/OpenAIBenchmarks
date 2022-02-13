@@ -5,14 +5,14 @@ import pickle
 
 from CartPole import Genome_C
 from LunarLander import Genome_L
-#import visualize
+import visualize
 
 
 # Program parameters
 ENVIRONMENTS = ["CartPole", "LunarLander"]
 CONFIG_PATHS = ["./CartPole/config_ffnn_cartpole", "./LunarLander/config_ffnn_lunarlander"]
 RESULTS_FOLDER = ["./CartPole/results/", "./LunarLander/results/"]
-ENV_ID = 1      # Change index to switch between the environments
+ENV_ID = 0      # Change index to switch between the environments
 
 NUM_GENERATIONS = 200
 
@@ -67,12 +67,11 @@ if __name__ == '__main__':
         print("##### Something else happened. #####")
         exit(1)
 
-    '''
-    #node_names = {-1:'A', -2: 'B', 0:'A XOR B'}
-    visualize.draw_net(config, winner, filename='CartPole_v1', view=True)#, node_names=node_names)
-    visualize.plot_stats(stats, ylog=False, view=True)
-    visualize.plot_species(stats, view=True)
-    '''
+    visualize.plot_stats(stats, ylog=False, view=False, 
+        filename="./" + ENVIRONMENTS[ENV_ID] + "/" + ENVIRONMENTS[ENV_ID] + "_fitness.png")
+    
+    visualize.plot_species(stats, view=False, 
+        filename="./" + ENVIRONMENTS[ENV_ID] + "/" + ENVIRONMENTS[ENV_ID] + "_speciation.png")
 
     # Display the winning genome
     print('\nBest genome:\n{!s}'.format(winner))
