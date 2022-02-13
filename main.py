@@ -68,10 +68,10 @@ if __name__ == '__main__':
         exit(1)
 
     visualize.plot_stats(stats, ylog=False, view=False, 
-        filename="./" + ENVIRONMENTS[ENV_ID] + "/" + ENVIRONMENTS[ENV_ID] + "_fitness.png")
+        filename="./" + ENVIRONMENTS[ENV_ID] + "/results/" + ENVIRONMENTS[ENV_ID] + "_fitness.png")
     
     visualize.plot_species(stats, view=False, 
-        filename="./" + ENVIRONMENTS[ENV_ID] + "/" + ENVIRONMENTS[ENV_ID] + "_speciation.png")
+        filename="./" + ENVIRONMENTS[ENV_ID] + "/results/" + ENVIRONMENTS[ENV_ID] + "_speciation.png")
 
     # Display the winning genome
     print('\nBest genome:\n{!s}'.format(winner))
