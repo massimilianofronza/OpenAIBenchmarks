@@ -5,7 +5,7 @@ import pickle
 
 from CartPole import Genome_C
 from LunarLander import Genome_L
-import visualize
+import visualize as visualize
 
 
 # Program parameters
@@ -14,7 +14,7 @@ CONFIG_PATHS = ["./CartPole/config_ffnn_cartpole", "./LunarLander/config_ffnn_lu
 RESULTS_FOLDER = ["./CartPole/results/", "./LunarLander/results/"]
 ENV_ID = 0      # Change index to switch between the environments
 
-NUM_GENERATIONS = 200
+NUM_GENERATIONS = 50
 
 CustomGenome = None
 Results = RESULTS_FOLDER[ENV_ID]
@@ -64,7 +64,7 @@ if __name__ == '__main__':
         print("##### An optimal individual was already found and recorded! #####")
         exit(1)
     except:
-        print("##### Something else happened. #####")
+        print("##### Something else happened. Probably the /results/ folder doesn't exist #####")
         exit(1)
 
     visualize.plot_stats(stats, ylog=False, view=False, 

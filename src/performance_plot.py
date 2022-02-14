@@ -16,7 +16,7 @@ RESULTS = [
 ]
 
 ENV_IDS = [0, 1, 2, 3, 4]        # Insert the genome ids that you want to plot
-NUM_SIMULATIONS = 5000
+NUM_SIMULATIONS = 50
 NUM_CORES = 8
 
 
