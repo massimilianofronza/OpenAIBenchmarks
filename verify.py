@@ -11,16 +11,16 @@ CONFIG_PATHS = [
     "./CartPole/config_ffnn_cartpole", 
     "./LunarLander/config_ffnn_lunarlander",
     "./LunarLander/singleGenomes/min_fitness/config_ffnn_lunarlander",
-    "./LunarLander/singleGenomes/nice/config_ffnn_lunarlander"
+    "./LunarLander/singleGenomes/no_hidden/config_ffnn_lunarlander"
 ]
 RESULTS_FOLDER = [
     "./CartPole/results/", 
     "./LunarLander/results/",
     "./LunarLander/singleGenomes/min_fitness/",
-    "./LunarLander/singleGenomes/nice/"
+    "./LunarLander/singleGenomes/no_hidden/"
 ]
 
-ENV_ID = 1      # Change index to switch between the environments
+ENV_ID = 0      # Change index to switch between the environments
 
 
 CustomGenome = None
