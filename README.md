@@ -1,5 +1,6 @@
 # OpenAIBenchmarks
-University project for the "Bio-Inspired Artificial Intelligence" course.
+University project for the "Bio-Inspired Artificial Intelligence" course at UniTN.
+This work aims at applying the Neuroevolution of Augmenting Topologies algorithm(NEAT) to the CartPole and LunarLander benchmarks from the OpenAI Gym library to explore the NEAT's capabilities at evolving agents for sequential decision tasks.
 
 --------------------------------
 
