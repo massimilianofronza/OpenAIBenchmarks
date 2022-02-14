@@ -5,7 +5,7 @@ import pickle
 
 from CartPole import Genome_C
 from LunarLander import Genome_L
-import visualize as visualize
+import visualize
 
 
 # Program parameters

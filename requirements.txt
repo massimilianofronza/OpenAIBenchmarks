@@ -1,8 +1,7 @@
 box2d-py==2.3.8
 gym==0.21.0
-matplotlib
-neat-python
-pip==21.3.1
+imageio-ffmpeg==0.4.5
+matplotlib==3.5.1
+neat-python==0.92
+numpy==1.22.2
 pyglet==1.5.21
-setuptools==53.0.0
-wheel==0.37.1
